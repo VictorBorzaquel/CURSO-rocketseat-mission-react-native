@@ -7,6 +7,7 @@ import AppLoading from "expo-app-loading";
 import { StatusBar } from "react-native";
 import { Background } from "./src/components/Background";
 import { Routes } from "./src/routes";
+import { theme } from "./src/global/styles/theme";
 
 export default function App() {
   const [fontLoaded] = useFonts({
@@ -24,7 +25,7 @@ export default function App() {
   <Background>
     <StatusBar 
       barStyle="light-content"
-      backgroundColor="transparent"
+      backgroundColor={theme.colors.secondary100}
       translucent 
     />
     <Routes/>
