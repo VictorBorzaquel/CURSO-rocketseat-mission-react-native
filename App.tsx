@@ -8,6 +8,7 @@ import { StatusBar } from "react-native";
 import { Background } from "./src/components/Background";
 import { Routes } from "./src/routes";
 import { theme } from "./src/global/styles/theme";
+import { AuthProvider } from "./src/hooks/auth";
 
 export default function App() {
   const [fontLoaded] = useFonts({
@@ -28,7 +29,9 @@ export default function App() {
       backgroundColor={theme.colors.secondary100}
       translucent 
     />
-    <Routes/>
+    <AuthProvider>
+      <Routes/>
+    </AuthProvider>
   </Background>  
   );
 }
